@@ -1,0 +1,17 @@
+{
+  "name": "funcity.club",
+  "version": "1.0.0",
+  "description": "",
+  "license": "GPL-3.0-or-later",
+  "author": "Victor Villas",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "test": "astro test"
+  },
+  "dependencies": {
+    "astro": "^5.13.5",
+    "typescript": "^5.9.2"
+  }
+}
