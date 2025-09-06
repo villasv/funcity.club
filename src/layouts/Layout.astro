@@ -4,6 +4,8 @@ export interface Props {
 }
 
 const { title = "funcity" } = Astro.props;
+
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -18,9 +20,7 @@ const { title = "funcity" } = Astro.props;
       <h1 class="site-title">funcity.club</h1>
     </header>
     <slot />
-    <footer class="site-footer">
-      <p>&copy; 2025 funcity</p>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -48,15 +48,6 @@ const { title = "funcity" } = Astro.props;
     font-size: 3rem;
     color: #ff6b35;
     letter-spacing: -0.02em;
-  }
-
-  .site-footer {
-    padding: 2rem 1rem;
-    text-align: center;
-    border-top: 1px solid #eee;
-    margin-top: 2rem;
-    color: #666;
-    font-size: 0.9rem;
   }
 
   @media (max-width: 768px) {
