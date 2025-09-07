@@ -25,6 +25,26 @@ import Footer from "../components/Footer.astro";
 </html>
 
 <style is:global>
+  :root {
+    /* theme color palette */
+    --color-graphite: rgb(60, 58, 55);
+    --color-chocolate: rgb(110, 57, 1);
+    --color-cookie: rgb(196, 127, 111);
+    --color-ceramic: rgb(244, 201, 165);
+    --color-milk: rgb(250, 245, 235);
+    --color-crema: rgb(247, 147, 2);
+    --color-carrot: #ff6b35;
+    --color-cherry: rgb(214, 6, 26);
+
+    --color-barely-there: var(--color-ceramic);
+    --color-discreet: var(--color-cookie);
+    --color-accent-primary: var(--color-carrot);
+
+    --font-family-heading: Impact, sans-serif;
+    --font-family-content: Helvetica, sans-serif;
+    --font-size-base: 1rem;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -32,21 +52,21 @@ import Footer from "../components/Footer.astro";
   }
 
   body {
-    font-family: Helvetica, sans-serif;
+    font-family: var(--font-family-content);
     line-height: 1.6;
-    color: #333;
+    color: var(--color-graphite);
   }
 
   .site-header {
     padding: 2rem 1rem;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-barely-there);
   }
 
   .site-title {
-    font-family: Impact, sans-serif;
+    font-family: var(--font-family-heading);
     font-size: 3rem;
-    color: #ff6b35;
+    color: var(--color-accent-primary);
     letter-spacing: -0.02em;
   }
 
