@@ -1,32 +1,21 @@
 ---
-import { BUILD_TIME_SUBDOMAIN } from "../utils/city.ts";
+import { getLandAcknowledgment } from "../utils/city";
+const BUILD_TIME_LAND_ACK = getLandAcknowledgment();
 ---
 
 <footer class="site-footer">
   <p>
-    <span class="land-ack">{BUILD_TIME_SUBDOMAIN}</span>
-    As we go about our lives on these territories, may we never forget our responsibility
+    <span class="land-ack">{BUILD_TIME_LAND_ACK}</span>
+    As we go about our lives on these lands, may we never forget our responsibility
     to pursue the truth, reconciliation, and justice for those whose futures have
     been stolen and those who continue to suffer the legacy of systemic oppression.
   </p>
 </footer>
 
 <script>
-  import { CityCode } from "../utils/city.ts";
-  import {
-    asEnum,
-    getCurrentCityFromSubdomain,
-    getLandAcknowledgment,
-  } from "../utils/city.ts";
-  document.addEventListener("DOMContentLoaded", () => {
-    const elem = document.querySelector(".land-ack");
-    if (!elem) return;
-    const content = elem.textContent?.trim() || "";
-    const BUILD_TIME_SUBDOMAIN = content.length === 3 ? content : undefined;
-    const cityCode = BUILD_TIME_SUBDOMAIN || getCurrentCityFromSubdomain();
-    const acknowledgment = getLandAcknowledgment(asEnum(CityCode, cityCode));
-    elem.textContent = acknowledgment + " ";
-  });
+  import { getLandAcknowledgment } from "../utils/city";
+  import { ifEmptyWriteFromProvider } from "../utils/dynamic";
+  ifEmptyWriteFromProvider(document, ".land-ack", getLandAcknowledgment);
 </script>
 
 <style>

@@ -1,25 +1,16 @@
-export const BUILD_TIME_SUBDOMAIN =
-  typeof process === "undefined" ? undefined : process.env.SUB;
+import { fromEnv, ofEnum } from "./enum.ts";
 
 export enum CityCode {
   YVR = "yvr",
   YYZ = "yyz",
 }
 
-type StrEnum = Record<string, string>;
-export function asEnum<T extends StrEnum>(enumObj: T, str: string): T[keyof T] {
-  for (const key in enumObj) if (enumObj[key] === str) return enumObj[key];
-  throw new Error(`Value ${str} not found in enum`);
-}
+export const BUILD_TIME_SUBDOMAIN = fromEnv(CityCode, "SUB");
 
 export function getCurrentCityFromSubdomain(): CityCode | undefined {
-  if (typeof window === "undefined") return undefined;
-  const sub = window.location.hostname.split(".")[0];
-  try {
-    return asEnum(CityCode, sub);
-  } catch {
-    return undefined;
-  }
+  if (typeof window === "undefined") return BUILD_TIME_SUBDOMAIN;
+  const subdomain = window.location.hostname.split(".")[0];
+  return ofEnum(CityCode, subdomain);
 }
 
 const LAND_ACKNOWLEDGEMENTS = {
@@ -32,6 +23,7 @@ const LAND_ACKNOWLEDGEMENTS = {
   [CityCode.YYZ]: `We acknowledge that Toronto is located on the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples.`,
 };
 
-export function getLandAcknowledgment(cityCode?: CityCode): string {
+export function getLandAcknowledgment(): string {
+  const cityCode = getCurrentCityFromSubdomain();
   return LAND_ACKNOWLEDGEMENTS[cityCode] || "";
 }

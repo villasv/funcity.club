@@ -6,7 +6,7 @@
   "author": "Victor Villas",
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "SUB=yvr astro dev",
     "build": "astro build",
     "test": "astro test"
   },
