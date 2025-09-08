@@ -20,12 +20,15 @@ of many Indigenous Peoples, including 10 local First Nations: q̓ic̓əy̓ (Katz
 q̓ʷɑ:n̓ƛ̓ən̓ (Kwantlen), kʷikʷəƛ̓əm (Kwikwetlem), máthxwi (Matsqui),
 xʷməθkʷəy̓əm (Musqueam), qiqéyt (Qayqayt), Semiahmoo, Sḵwx̱wú7mesh Úxwumixw
 (Squamish), scəw̓aθən məsteyəxʷ (Tsawwassen) and səlilwətaɬ (Tsleil-Waututh).
+Indigenous communities continue to face threats to their rights, land, and
+sovereignty in the name of resource extraction like logging, mining, and fossil
+fuel pipelines.
 
-The wealth and prosperity of this region were later built on the backs of East
-Asian and South Asian workers facing generations of discriminatory wages,
-dangerous working conditions and legal exclusion from the economy they helped
-create. This exploitation continues through the abuse of immigrants and the
-erosion of labor protections leaving the most vulnerable workers without
+Much of the wealth and prosperity of this region were later built on the backs
+of East Asian and South Asian workers facing generations of discriminatory
+wages, dangerous working conditions and legal exclusion from the economy they
+helped create. This exploitation continues through the abuse of immigrants and
+the erosion of labor protections leaving the most vulnerable workers without
 recourse.`,
 
   [CityCode.YYZ]: `We acknowledge that Toronto is located on the traditional territory of many nations including the Mississaugas of the Credit, the Anishnabeg, the Chippewa, the Haudenosaunee and the Wendat peoples.`,
